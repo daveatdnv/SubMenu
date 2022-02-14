@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
+using ActiproSoftware.Windows.Themes;
 
 namespace SubMenu
 {
@@ -13,5 +8,12 @@ namespace SubMenu
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            ThemeManager.CurrentTheme = ThemeNames.MetroDark;
+            ThemeManager.AreNativeThemesEnabled = true;
+
+            base.OnStartup(e);
+        }
     }
 }
